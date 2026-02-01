@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>My Valentine, Akshi</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #fdeef4;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 50px 20px;
+      color: #5a2a2a;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 46px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    img {
+      width: 90%;
+      max-width: 420px;
+      border-radius: 22px;
+      margin: 25px 0;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    }
+
+    p {
+      font-size: 21px;
+      line-height: 1.8;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .shayari {
+      margin-top: 30px;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 2;
+    }
+
+    .heart {
+      font-size: 48px;
+      margin: 22px 0;
+    }
+
+    button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 15px 38px;
+      font-size: 21px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background: #b92a5b;
+    }
+
+    .signature {
+      margin-top: 35px;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+      font-size: 24px;
+      animation: floatUp linear forwards;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 0.6; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    /* Music button */
+    .music-btn {
+      background: transparent;
+      border: 2px solid #d6336c;
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Akshi ❤️</h1>
+  <h2>My Forever Valentine</h2>
+
+  <!-- Music -->
+  <audio id="song" loop>
+    <source src="jo-tum-mere-ho.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" onclick="playMusic()">▶ Play our song</button>
+
+  <!-- Photo -->
+  <img src="photo.jpg" alt="Us together">
+
+  <p>
+    From the day you came into my life,  
+    everything started feeling more beautiful and more meaningful.
+    <br><br>
+    You are my peace, my happiness, and my safest place.  
+    With you, even ordinary days feel special.
+    <br><br>
+    <strong>Ashii, I love you yrr 😄</strong>
+  </p>
+
+  <!-- Hindi Shayari -->
+  <div class="shayari">
+    “जो तुम मेरे हो,<br>
+    तो मैं कुछ नहीं मांगूं दुनिया से।<br>
+    और तुम हो ही नहीं,<br>
+    तो मैं जीना नहीं चाहूं दुनिया में।” ❤️
+  </div>
+
+  <div class="heart">💖</div>
+
+  <p><strong>Will you be my Valentine… forever?</strong></p>
+
+  <button onclick="alert('I love you endlessly, Akshi ❤️')">
+    Yes ❤️
+  </button>
+
+  <div class="signature">
+    — Yours always,<br>
+    <strong>Sumail</strong>
+  </div>
+
+  <script>
+    // Play music (iPhone safe)
+    function playMusic() {
+      document.getElementById("song").play();
+    }
+
+    // Floating hearts
+    const hearts = ["❤️","💖","💕","💗"];
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (12 + Math.random() * 10) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 20000);
+    }, 900);
+  </script>
+
+</body>
+</html>
